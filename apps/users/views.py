@@ -10,9 +10,10 @@ import bcrypt
 
 
 def index(request):
-    if 'id' in request.session:
-        request.session.clear()
-    return render(request, 'users/index.html')
+    # if 'id' in request.session:
+    #     request.session.clear()
+    # return render(request, 'users/index.html')
+    return HttpResponse("Index.html")
 
 
 def register(request):
