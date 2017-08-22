@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'users/css/main.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <div id="wrapper">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/register" id="registration" method="POST">
+            {% csrf_token %}
+            <h2>Register</h2>
+            <table>
+                <tr> <!-- Name -->
+                    <td><label for="name">Name:</label></td>
+                    <td></td>
+                    <td><input type="text" id="name" name="name" value="{{name}}"></td>
+                </tr>
+                <tr> <!--Alias -->
+                    <td><label for="alias">Alias: </label></td>
+                    <td></td>
+                    <td><input type="text" id="alias" name="alias" value="{{alias}}"></td>
+                </tr>
+                <tr>
+                    <!--Email -->
+                    <td><label for="email">Email: </label></td>
+                    <td></td>
+                    <td><input type="text" id="email" name="email" value="{{email}}"></td>
+                </tr>
+                <tr> <!-- Password -->
+                    <td><label for="password">Password: </label></td>
+                    <td></td>
+                    <td><input type="password" id="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td>*Password should be at </td>
+                    <td></td>
+                    <td>least 8 characters</td>
+                </tr>
+                <tr> <!-- PW Confirm -->
+                    <td><label for="pw_confirm">Password Confirmation: </label></td>
+                    <td></td>
+                    <td><input type="password" id="pw_confirm" name="pw_confirm"></td>
+                </tr>
+            </table>
+            <input type="submit" value="Register">
+        </form>
+        <form action="/login" id="login" method="post">
+            {% csrf_token %}
+            <h2>Login</h2>
+            <table>
+                <tr>
+                    <td><input type="text" name="email" placeholder="email" value="{{lemail}}"></td>
+                </tr>
+                <tr>
+                    <td><input type="password" name="password" placeholder="password"></td>
+                </tr>
+            </table>
+            <input type="submit" value="Login">
+        </form>
+        
+    </div>
+</body>
+</html>
