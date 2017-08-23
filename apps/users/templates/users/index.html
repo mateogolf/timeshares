@@ -6,6 +6,13 @@
     {% load static %}
     <!-- The line above tells Django to be ready to listen for static files -->
     <link rel="stylesheet" href="{% static 'users/css/main.css' %}" media="screen" title="no title" charset="utf-8">
+    <!-- bootstrapcdn -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -20,15 +27,21 @@
             {% csrf_token %}
             <h2>Register</h2>
             <table>
-                <tr> <!-- Name -->
-                    <td><label for="name">Name:</label></td>
+                <tr> <!-- First Name -->
+                    <td><label for="first_name">First Name:</label></td>
                     <td></td>
-                    <td><input type="text" id="name" name="name" value="{{name}}"></td>
+                    <td><input type="text" id="first_name" name="first_name" value="{{first_name}}"></td>
                 </tr>
-                <tr> <!--Alias -->
-                    <td><label for="alias">Alias: </label></td>
+                <tr>
+                    <!-- Last Name -->
+                    <td><label for="last_name">Last Name:</label></td>
                     <td></td>
-                    <td><input type="text" id="alias" name="alias" value="{{alias}}"></td>
+                    <td><input type="text" id="last_name" name="last_name" value="{{last_name}}"></td>
+                </tr>
+                <tr> <!--Username -->
+                    <td><label for="username">Username: </label></td>
+                    <td></td>
+                    <td><input type="text" id="username" name="username" value="{{username}}"></td>
                 </tr>
                 <tr>
                     <!--Email -->
