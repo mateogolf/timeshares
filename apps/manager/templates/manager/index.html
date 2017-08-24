@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'users/css/main.css' %}" media="screen" title="no title" charset="utf-8">
+    <!-- bootstrapcdn -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <!-- AJAX -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <!-- bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Timeshares</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Add New... <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Timeshare</a></li>
+                            <li><a href="#">Account</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Add a new Source</a></li>
+                            <li><a href="#">Edit Static Info</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Settings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-9">
+                <div class="main-content">
+                    <article class="col-xs-12">
+                        <h2>Expires this Year</h2>
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <table class="table points">
+                                    <thead>
+                                        <tr>
+                                            <th>Account</th>
+                                            <th>Points</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>My StarOptions</td>
+                                            <td>28350 SO</td>
+                                        </tr>
+                                        <!-- For loop through query filtered to this year
+                                            <tr>
+                                                <td>account_pts.account.nick</td>
+                                                <td>account_pts.pts</td>
+                                            </tr> 
+                                        -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-xs-7">
+                                <table class="available table">
+                                    <thead>
+                                        <tr>
+                                            <th>Property</th>
+                                            <th>Trade Value</th>
+                                            <th>Bank Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Marriott Sabal Palms</td>
+                                            <td>110,000 MRP</td>
+                                            <td>2150 VCP</td>
+                                        </tr>
+                                        <!-- For loop through query filtered to this year
+                                            <tr>
+                                                <td>availability.property.name</td>
+                                                <td>{{availability.property.prop_val.value}} {{availability.property.prop_val.currency.abr}}</td>
+                                                <td>{{availability.property.prop_val.value}} {{availability.property.prop_val.currency.abr}}</td>
+                                            </tr> 
+                                        -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <!--Nested Account Info-->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>Marriott Rewards JPR<small>(427,502 MRP)</small></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="sidebar-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
