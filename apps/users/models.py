@@ -2,6 +2,7 @@
 """Users Models - Users"""
 from __future__ import unicode_literals
 from django.db import models
+from ..manager.models import Address, AddressManager
 import bcrypt
 import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
