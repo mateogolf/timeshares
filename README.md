@@ -49,7 +49,7 @@ Key Features:
         duration    ==>How long these points stay valid
         source      OnetoMany========>source_points (Interval deals in timeshares and multiple types of points?)
         trade/bank  TINYINT==>
-            0: currency NOT related to points,
+            0: currency NOT related to timeshares,
             1: TRADE: timeshare=>hotel points
                 a timeshare from the related source can TRADE into this currency type to use at their hotels
             2: BANK: timeshare=>Resorts (Other timeshares)
